@@ -1,0 +1,16 @@
+export const DBkeys = <const>{
+  CURRENT_USER: 'current_user',
+  USER_PERMISSIONS: 'user_permissions',
+  ACCESS_TOKEN: 'access_token',
+  REFRESH_TOKEN: 'refresh_token',
+  TOKEN_EXPIRES_IN: 'expires_in',
+  REMEMBER_ME: 'remember_me',
+  LANGUAGE: 'language',
+  HOME_URL: 'home_url',
+  THEME_ID: 'themeId',
+  SHOW_DASHBOARD_STATISTICS: 'show_dashboard_statistics',
+  SHOW_DASHBOARD_NOTIFICATIONS: 'show_dashboard_notifications',
+  SHOW_DASHBOARD_TODO: 'show_dashboard_todo',
+  SHOW_DASHBOARD_BANNER: 'show_dashboard_banner',
+  USER_CONFIG_KEYS: 'user_config_keys',
+};

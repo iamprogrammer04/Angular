@@ -1,0 +1,100 @@
+<div class="dialog-container">
+  <div>
+    <h1 mat-dialog-title>{{data.value ? ('system.update' | translate):
+      ('system.save'
+      | translate)}}
+      Users</h1>
+  </div>
+  <mat-card>
+    <form [formGroup]="users" (ngSubmit)="onSubmit()" class="form-field-full">
+      <div mat-dialog-content class="content">
+        <div class="row">
+          <div class="col-sm-6">
+            <mat-form-field appearance="outline">
+              <mat-label>{{'usersManager.jobTitle' | translate}}</mat-label>
+              <input matInput type="text" placeholder="IT Department" TrimInput
+                     formControlName="jobTitle">
+            </mat-form-field>
+          </div>
+          <div class="col-sm-6">
+            <mat-form-field appearance="outline">
+              <mat-label>{{'usersManager.fullName' | translate}}</mat-label>
+              <input matInput type="text" placeholder="i.e David" TrimInput
+                     formControlName="fullName">
+            </mat-form-field>
+          </div>
+
+          <div class="col-sm-6">
+            <mat-form-field appearance="outline">
+              <mat-label>{{'usersManager.userName' | translate}}</mat-label>
+              <input matInput placeholder="khanhtungmtp" TrimInput
+                     formControlName="userName">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>{{'usersManager.email' | translate}}</mat-label>
+              <input matInput type="email" placeholder="tung@gmail.com" TrimInput
+                     formControlName="email">
+            </mat-form-field>
+          </div>
+          <div class="col-sm-6">
+            <mat-form-field appearance="outline">
+              <mat-label>{{'usersManager.phoneNumber' | translate}}</mat-label>
+              <input matInput type="phoneNumber" placeholder="01238860500" TrimInput
+                     formControlName="phoneNumber">
+            </mat-form-field>
+
+            <mat-form-field class="w-full">
+              <mat-label>Select {{ 'usersManager.roles' | translate
+                }}</mat-label>
+              <mtx-select class="roles" [items]="roles" [addTag]="addTag"
+                          [hideSelected]="true" [multiple]="true" bindLabel="name"
+                          formControlName="roles">
+              </mtx-select>
+            </mat-form-field>
+          </div>
+          <!-- <mat-form-field appearance="outline">
+                    <mat-label>Date of birth</mat-label>
+                    <input matInput [matDatepicker]="picker" formControlName="dob">
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matIconSuffix
+                      [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                  </mat-form-field> -->
+          <!-- <div class="row">
+                  <mat-radio-group aria-label="Select an option" formControlName="gender">
+                    <mat-label><b>Gender</b></mat-label>
+                    <mat-radio-button value="male">Male</mat-radio-button>
+                    <mat-radio-button value="female">Female</mat-radio-button>
+                    <mat-radio-button value="others">Others</mat-radio-button>
+                    <mat-radio-button value="others">Not Interested</mat-radio-button>
+                  </mat-radio-group>
+                </div> -->
+          <div class="col-sm-6">
+            <mat-form-field appearance="outline">
+              <mat-label>{{'usersManager.password'| translate}}</mat-label>
+              <input matInput placeholder="i.e 5" type="text"
+                     formControlName="password">
+            </mat-form-field>
+          </div>
+          <div class="col-sm-6">
+            <mat-form-field appearance="outline">
+              <mat-label>{{'usersManager.confirmPassword' |
+                translate}}</mat-label>
+              <input matInput placeholder="i.e 5" type="text"
+                     formControlName="confirmPassword">
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+
+      <div mat-dialog-actions class="action-btns">
+        <button mat-raised-button type="button" color="default"
+                [mat-dialog-close]="false">{{'system.cancel' | translate}}</button>
+        <button mat-raised-button color="primary" type="submit"
+                [disabled]="!users.valid">{{data ?
+          ('system.update' | translate) : ('system.save' |
+          translate)}}</button>
+      </div>
+    </form>
+  </mat-card>
+</div>

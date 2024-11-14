@@ -1,0 +1,45 @@
+.example-form {
+  display: flex;
+  align-items: center;
+}
+
+.example-checkbox {
+  margin-right: 20px;
+}
+
+.users-search {
+  flex-grow: 1; /* Input search sẽ chiếm phần còn lại của không gian */
+  margin-right: 20px;
+}
+
+button {
+  white-space: nowrap;
+}
+
+.operation-button {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.ml-50 {
+  margin-left: 50px;
+}
+
+.dialog-container.dialog-blur {
+  filter: blur(4px); /* Hiệu ứng mờ */
+  border-color: #ccc; /* Màu sắc border khi mất focus */
+}
+
+.mat-dialog-container {
+  backdrop-filter: blur(4px); /* Hiệu ứng mờ cho backdrop */
+}
+
+.dialog-container {
+  transition: border-color 0.3s ease-in-out; /* Thêm hiệu ứng cho việc thay đổi màu sắc */
+  border: 2px solid #ccc; /* Màu sắc mặc định của border */
+}
+
+.dialog-container:focus {
+  outline: none; /* Loại bỏ border khi dialog được focus */
+  border-color: #2196f3; /* Màu sắc khi dialog mất focus */
+}

@@ -1,0 +1,37 @@
+<page-header class="bg-green-600"></page-header>
+
+<div class="row">
+  <div class="col-6">
+    <!-- Input search -->
+    <mat-form-field class="users-search">
+      <mat-label>{{'system.search' | translate}}</mat-label>
+      <input matInput type="text" [(ngModel)]="searchStr"
+             (ngModelChange)="onInputChange()">
+      <button *ngIf="searchStr" matSuffix mat-icon-button aria-label="Clear"
+              (click)="clearInputSearch()">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
+
+  <div class="col-6 operation-button">
+    <mat-checkbox [(ngModel)]="showToolbar">Show Toolbar</mat-checkbox>
+    <mat-checkbox [(ngModel)]="columnResizable">Column Resizable</mat-checkbox>
+    <!-- Button create user -->
+    <button mat-raised-button color="primary" class="ml-50"
+            (click)="openAddEditUsersDialog()">{{'usersManager.new' |
+      translate}}</button>
+
+  </div>
+</div>
+
+<mtx-grid [data]="list" [columns]="columns" [loading]="isLoading"
+          [columnResizable]="columnResizable" [rowHover]="true" [rowStriped]="true"
+          [showToolbar]="showToolbar" [toolbarTitle]="'Users Managements'"
+          [noResultTemplate]="noResultTpl" [pageOnFront]="showPaginator"
+          [showPaginator]="true" [pageSizeOptions]="[5,10,50,100]" [pageIndex]="0"
+          [pageSize]="5" (sortChange)="changeSort($event)">
+</mtx-grid>
+<ng-template #noResultTpl>
+  {{'system.noData' | translate}}
+</ng-template>
